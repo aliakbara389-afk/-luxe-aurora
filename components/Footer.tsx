@@ -64,7 +64,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-plum-800 pt-6 text-center text-xs text-plum-300">
-          © {new Date().getFullYear()} لوکس آرورا — تمامی حقوق محفوظ است.
+          <span>
+            &copy; 2026 Luxe Aurora — تمامی حقوق محفوظ است.
+          </span>
         </div>
       </div>
     </footer>
