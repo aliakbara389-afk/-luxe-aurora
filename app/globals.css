@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-vazirmatn), "Vazirmatn", Tahoma, sans-serif;
+
+  --color-cream-50: #fdfbf7;
+  --color-cream-100: #faf5ec;
+  --color-cream-200: #f3e9d7;
+
+  --color-rose-soft-50: #fdf4f5;
+  --color-rose-soft-100: #fbe8ea;
+  --color-rose-soft-200: #f6d0d5;
+  --color-rose-soft-300: #eeaab4;
+  --color-rose-soft-400: #e37f90;
+  --color-rose-soft-500: #d4586e;
+  --color-rose-soft-600: #b93d55;
+  --color-rose-soft-700: #9a2f46;
+
+  --color-gold-50: #fdf9ec;
+  --color-gold-100: #faf0cd;
+  --color-gold-200: #f4df97;
+  --color-gold-300: #ecc761;
+  --color-gold-400: #e4b13c;
+  --color-gold-500: #c9962e;
+  --color-gold-600: #a97524;
+  --color-gold-700: #87571f;
+
+  --color-plum-50: #faf6f8;
+  --color-plum-100: #f2e8ee;
+  --color-plum-200: #e2cdda;
+  --color-plum-300: #c9a5bd;
+  --color-plum-400: #a8779a;
+  --color-plum-500: #8b557c;
+  --color-plum-600: #6f4063;
+  --color-plum-700: #573150;
+  --color-plum-800: #442a40;
+  --color-plum-900: #37222f;
+  --color-plum-950: #221019;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream-50);
+  color: var(--color-plum-900);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-rose-soft-300);
+  color: var(--color-plum-950);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-18px) scale(1.03); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    110deg,
+    var(--color-rose-soft-500) 20%,
+    var(--color-gold-400) 40%,
+    var(--color-rose-soft-500) 60%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+.card-glow {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-glow:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -18px rgba(185, 61, 85, 0.35);
+}
